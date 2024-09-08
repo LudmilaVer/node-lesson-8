@@ -1,5 +1,5 @@
-import { Sequelize } from 'sequelize';
-import config from './config.json' assert { type: 'json' };
+const { Sequelize } = require('sequelize');
+const config = require('./config.json');
 
 const dbConfig = config.development;
 const sequelize = new Sequelize(dbConfig.database, dbConfig.username, dbConfig.password, {
@@ -7,4 +7,4 @@ const sequelize = new Sequelize(dbConfig.database, dbConfig.username, dbConfig.p
   dialect: dbConfig.dialect
 });
 
-export default sequelize;
+module.exports = sequelize;
